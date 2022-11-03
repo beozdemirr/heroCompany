@@ -32,7 +32,7 @@ public class Admin {
 
 
 
-    @Column(unique = true)
+  /*  @Column(unique = true)
     @Length(message = "Maximum 60", max = 60)
     @NotBlank(message = "Email can not be blank")
     @Email(message = "Email Format Error")
@@ -43,6 +43,6 @@ public class Admin {
             regexp = "^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[^a-zA-Z0-9\\s]).{6,}")
     private String password;
 
-
+*/
 
 }

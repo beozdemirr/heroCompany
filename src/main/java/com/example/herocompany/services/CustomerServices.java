@@ -30,7 +30,7 @@ public class CustomerServices {
         Map<REnum, Object> hashMap = new LinkedHashMap<>();
 
         Customer customer1 = customerRepository.save(customer);
-        PasswordEncoder passwordEncoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
+        //PasswordEncoder passwordEncoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
         hashMap.put(REnum.status, true);
         hashMap.put(REnum.result, customer);
         return new ResponseEntity<>(hashMap, HttpStatus.OK);

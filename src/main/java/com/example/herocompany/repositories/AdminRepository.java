@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 
 public interface AdminRepository extends JpaRepository<Admin, Long> {
-    Optional<Admin> findByPassword(String password);
-    Optional<Admin> findByEmailEndingWithIgnoreCase(String email);
+ //   Optional<Admin> findByPassword(String password);
+ //   Optional<Admin> findByEmailEndingWithIgnoreCase(String email);
 
 }

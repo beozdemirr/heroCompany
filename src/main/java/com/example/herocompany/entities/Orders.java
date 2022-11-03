@@ -12,11 +12,13 @@ public class Orders {
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private Long id;
+/*
 
    @ManyToOne
    @JoinColumn(name = "customerId")
    private Customer customer;
 
+*/
 
 
 

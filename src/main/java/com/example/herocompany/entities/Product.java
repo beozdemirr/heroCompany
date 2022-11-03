@@ -27,14 +27,14 @@ public class Product {
     @Range(message = "price can be between 5 and 9999",min = 5,max = 9999)
     private int price;
 
-    @PositiveOrZero
+  /*  @PositiveOrZero
     @Column(nullable = false)
     private int stock;
 
     @ManyToOne
     @JoinColumn(name = "category_id",referencedColumnName = "id")
     private Category category;
-
+*/
 
 
 }
