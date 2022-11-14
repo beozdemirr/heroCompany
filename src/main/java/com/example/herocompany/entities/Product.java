@@ -8,6 +8,8 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PositiveOrZero;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Data
@@ -31,5 +33,8 @@ public class Product {
     @JoinColumn(name = "category_id",referencedColumnName = "id")
     private Category category;
 
+    @ManyToMany(fetch = FetchType.LAZY,
+    mappedBy = "products")
+    private Set<Attribute> attributes = new HashSet<Attribute>();
 
 }
