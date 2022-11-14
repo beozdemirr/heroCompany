@@ -33,8 +33,4 @@ public class Product {
     @JoinColumn(name = "category_id", referencedColumnName = "id")
     private Category category;
 
-    @ManyToMany(fetch = FetchType.LAZY,
-    mappedBy = "products")
-    private Set<Attribute> attributes = new HashSet<Attribute>();
-
 }
