@@ -31,14 +31,4 @@ public class Customer {
     private String customerPhone;
 
 
- /*   @NotNull(message = "Email not null")
-    @Email(message = "Email should be valid")
-    private String customerEmail;
-
-
-    @NotBlank(message = "password can not be blank")
-    @Pattern(message = "Password must contain min one upper,lower letter and 0-9 digit number ",
-            regexp = "^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[^a-zA-Z0-9\\s]).{6,}")
-    private String customerPassword;
-*/
 }
