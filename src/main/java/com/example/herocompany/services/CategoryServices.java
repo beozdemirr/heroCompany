@@ -3,13 +3,15 @@ package com.example.herocompany.services;
 import com.example.herocompany.entities.Category;
 import com.example.herocompany.repositories.CategoryRepository;
 import com.example.herocompany.utils.REnum;
-import org.apache.tomcat.util.security.MD5Encoder;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
 
+
+@Transactional
 @Service
 public class CategoryServices {
 
@@ -19,6 +21,8 @@ public class CategoryServices {
     public CategoryServices(CategoryRepository categoryRepository) {
         this.categoryRepository = categoryRepository;
     }
+
+
 
     public ResponseEntity<Map<REnum, Object>> save(Category category) {
         Map<REnum, Object> hashMap = new LinkedHashMap<>();
