@@ -9,10 +9,13 @@ import java.util.Set;
 
 @Entity
 @Data
+@Table(name = "attributes")
 public class Attribute {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String feature;
 
+@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL,mappedBy = "attributes")
+    private Set<Product> products = new HashSet<>();
 }

@@ -13,6 +13,7 @@ import java.util.Set;
 
 @Entity
 @Data
+@Table(name = "products")
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,5 +33,17 @@ public class Product {
     @ManyToOne
     @JoinColumn(name = "category_id", referencedColumnName = "id")
     private Category category;
+
+    @ManyToMany(fetch = FetchType.LAZY,cascade =  CascadeType.ALL)
+    @JoinTable(name = "attribute_products",
+    joinColumns = {@JoinColumn(name = "attribute_id")},
+    inverseJoinColumns = {@JoinColumn (name = "product_id")})
+    private Set<Attribute> attributes = new HashSet<>();
+
+
+
+
+
+
 
 }

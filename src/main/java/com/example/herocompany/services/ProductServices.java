@@ -103,13 +103,4 @@ public class ProductServices {
 }
 
 
-//password ve username kontrolü tek satırda if ile yapılacak
-//şifre şifreleme
-//md5 metodu diye arat
-
-
-
-
-
-//müşteri password ekle
 
