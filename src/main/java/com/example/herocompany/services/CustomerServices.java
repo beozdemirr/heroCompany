@@ -26,7 +26,7 @@ public class CustomerServices {
 
     public ResponseEntity<Map<REnum, Object>> save(Customer customer) {
         Map<REnum, Object> hashMap = new LinkedHashMap<>();
-        Customer customer1 = customerRepository.save(customer);
+        customerRepository.save(customer);
         hashMap.put(REnum.status, true);
         hashMap.put(REnum.result, customer);
         return new ResponseEntity<>(hashMap, HttpStatus.OK);

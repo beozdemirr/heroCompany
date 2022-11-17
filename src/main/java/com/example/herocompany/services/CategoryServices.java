@@ -26,7 +26,7 @@ public class CategoryServices {
 
     public ResponseEntity<Map<REnum, Object>> save(Category category) {
         Map<REnum, Object> hashMap = new LinkedHashMap<>();
-        Category cat = categoryRepository.save(category);
+        categoryRepository.save(category);
         hashMap.put(REnum.status, true);
         hashMap.put(REnum.result, category);
         return new ResponseEntity<>(hashMap, HttpStatus.OK);

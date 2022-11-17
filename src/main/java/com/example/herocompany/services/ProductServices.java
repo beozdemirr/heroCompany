@@ -24,7 +24,7 @@ public class ProductServices {
 
     public ResponseEntity<Map<REnum, Object>> save(Product product) {
         Map<REnum, Object> hashMap = new LinkedHashMap<>();
-        Product product1 = productRepository.save(product);
+        productRepository.save(product);
         hashMap.put(REnum.status, true);
         hashMap.put(REnum.result, product);
         return new ResponseEntity<>(hashMap, HttpStatus.OK);
