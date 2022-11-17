@@ -37,10 +37,4 @@ public class Product {
             inverseJoinColumns = {@JoinColumn (name = "product_id")})
     private List<Attribute> attributes ;
 
-
-
-
-
-
-
 }

@@ -4,13 +4,9 @@ package com.example.herocompany.controllers;
 import com.example.herocompany.entities.Product;
 import com.example.herocompany.repositories.ProductRepository;
 import com.example.herocompany.services.ProductServices;
-import com.example.herocompany.utils.REnum;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/product")
