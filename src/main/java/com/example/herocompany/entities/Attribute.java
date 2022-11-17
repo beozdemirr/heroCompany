@@ -4,8 +4,7 @@ package com.example.herocompany.entities;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Data
@@ -16,6 +15,6 @@ public class Attribute {
     private Long id;
     private String feature;
 
-@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL,mappedBy = "attributes")
-    private Set<Product> products = new HashSet<>();
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL,mappedBy = "attributes")
+    private List<Product> products;
 }

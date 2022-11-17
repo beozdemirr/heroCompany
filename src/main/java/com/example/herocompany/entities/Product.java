@@ -3,13 +3,10 @@ package com.example.herocompany.entities;
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.Range;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.PositiveOrZero;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
+
 
 @Entity
 @Data
@@ -36,9 +33,9 @@ public class Product {
 
     @ManyToMany(fetch = FetchType.LAZY,cascade =  CascadeType.ALL)
     @JoinTable(name = "attribute_products",
-    joinColumns = {@JoinColumn(name = "attribute_id")},
-    inverseJoinColumns = {@JoinColumn (name = "product_id")})
-    private Set<Attribute> attributes = new HashSet<>();
+            joinColumns = {@JoinColumn(name = "attribute_id")},
+            inverseJoinColumns = {@JoinColumn (name = "product_id")})
+    private List<Attribute> attributes ;
 
 
 
