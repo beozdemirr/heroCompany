@@ -2,6 +2,7 @@ package com.example.herocompany.controllers;
 
 
 import com.example.herocompany.entities.Product;
+import com.example.herocompany.entities.ProductDto;
 import com.example.herocompany.repositories.ProductRepository;
 import com.example.herocompany.services.ProductServices;
 import org.springframework.http.ResponseEntity;
@@ -21,8 +22,8 @@ public class ProductController {
     }
 
     @PostMapping("/save")
-    public ResponseEntity save(@RequestBody Product product) {
-        return productServices.save(product);
+    public ResponseEntity save(@RequestBody ProductDto productDto) {
+        return productServices.save(productDto);
 
     }
 

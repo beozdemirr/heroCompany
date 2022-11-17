@@ -1,14 +1,20 @@
 package com.example.herocompany.services;
 
 
+import com.example.herocompany.entities.Attribute;
 import com.example.herocompany.entities.Product;
+import com.example.herocompany.entities.ProductDto;
+import com.example.herocompany.repositories.AttributeRepository;
+import com.example.herocompany.repositories.CategoryRepository;
 import com.example.herocompany.repositories.ProductRepository;
 import com.example.herocompany.utils.REnum;
+import org.apache.catalina.LifecycleState;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -17,18 +23,35 @@ import java.util.Optional;
 public class ProductServices {
 
     final ProductRepository productRepository;
+    final CategoryRepository categoryRepository;
+    final AttributeRepository attributeRepository;
 
-    public ProductServices(ProductRepository productRepository) {
+    public ProductServices(ProductRepository productRepository, CategoryRepository categoryRepository, AttributeRepository attributeRepository) {
         this.productRepository = productRepository;
+        this.categoryRepository = categoryRepository;
+        this.attributeRepository = attributeRepository;
     }
 
-    public ResponseEntity<Map<REnum, Object>> save(Product product) {
+    public ResponseEntity<Map<REnum, Object>> save(ProductDto productDto) {
         Map<REnum, Object> hashMap = new LinkedHashMap<>();
+        Product product = new Product();
+        product.setProductName(productDto.getProductName());
+        product.setDetail(productDto.getDetail());
+        product.setPrice(productDto.getPrice());
+        product.setCategory(categoryRepository.findById(productDto.getCategoryId()).get());
+        product.setAttributes(attributeRepository.findAllById(productDto.getAttributesIdList()));
+     //   product.setAttributes(attributeList(productDto.getAttributesIdList()));
         productRepository.save(product);
         hashMap.put(REnum.status, true);
-        hashMap.put(REnum.result, product);
+        hashMap.put(REnum.result, productDto);
         return new ResponseEntity<>(hashMap, HttpStatus.OK);
+
     }
+
+/*    public List<Attribute> attributeList(List<Long> attributeIdList){
+        return attributeRepository.findAllById(attributeIdList);
+    }*/
+
 
     public ResponseEntity<Map<REnum, Object>> delete(Long id) {
         Map<REnum, Object> hashMap = new LinkedHashMap<>();
