@@ -3,6 +3,7 @@ package com.example.herocompany.entities;
 
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.UniqueElements;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -24,6 +25,7 @@ public class Customer {
     private String customerLastName;
 
 
+    @Column(unique = true)
     @NotBlank(message = "Phone can't be blank")
     private String customerPhone;
 
