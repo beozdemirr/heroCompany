@@ -29,5 +29,7 @@ public class Customer {
     @NotBlank(message = "Phone can't be blank")
     private String customerPhone;
 
-
+    @OneToOne
+    @JoinColumn(name = "mail_id", referencedColumnName = "id" , unique = true)
+    private Mail mail;
 }

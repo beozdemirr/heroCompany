@@ -33,8 +33,8 @@ public class Product {
 
     @ManyToMany(fetch = FetchType.LAZY,cascade =  CascadeType.ALL)
     @JoinTable(name = "attribute_products",
-            joinColumns = {@JoinColumn(name = "attribute_id")},
-            inverseJoinColumns = {@JoinColumn (name = "product_id")})
+            joinColumns = {@JoinColumn(name = "product_id")},
+            inverseJoinColumns = {@JoinColumn (name = "attribute_id")})
     private List<Attribute> attributes ;
 
 }
