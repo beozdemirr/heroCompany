@@ -1,20 +1,16 @@
 package com.example.herocompany.services;
 
 
-import com.example.herocompany.entities.Attribute;
 import com.example.herocompany.entities.Product;
 import com.example.herocompany.entities.ProductDto;
 import com.example.herocompany.repositories.AttributeRepository;
 import com.example.herocompany.repositories.CategoryRepository;
 import com.example.herocompany.repositories.ProductRepository;
 import com.example.herocompany.utils.REnum;
-import org.apache.catalina.LifecycleState;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
