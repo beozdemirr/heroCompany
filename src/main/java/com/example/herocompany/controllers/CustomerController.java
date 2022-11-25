@@ -27,9 +27,6 @@ public class CustomerController {
     @PostMapping("/save")
     public ResponseEntity save(@RequestBody CustomerDto customerDto) {return customerServices.save(customerDto);}
 
-/*    @PostMapping("/save")
-    public Customer save(@RequestBody Customer customer){return customerServices.save(customer);}*/
-
     @DeleteMapping("/delete/{id}")
     public ResponseEntity delete(@PathVariable Long id) {return customerServices.delete(id);}
 

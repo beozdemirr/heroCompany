@@ -12,15 +12,11 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/attribute")
 public class AttributeController {
     final AttributeServices attributeServices;
-
     final AttributeRepository attributeRepository;
-
     public AttributeController(AttributeServices attributeServices, AttributeRepository attributeRepository) {
         this.attributeServices = attributeServices;
         this.attributeRepository = attributeRepository;
     }
-
-
     @PostMapping("/save")
     public ResponseEntity save(@RequestBody AttributeDto attributeDto) {
         return attributeServices.save(attributeDto);
@@ -44,7 +40,6 @@ public class AttributeController {
     @PutMapping("/update")
     public ResponseEntity update(@RequestBody Attribute attribute) {
         return attributeServices.update(attribute);
-
     }
 }
 

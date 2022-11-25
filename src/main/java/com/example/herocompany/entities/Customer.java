@@ -18,11 +18,9 @@ public class Customer {
     @Length(message = "Firstname must be between 3 and 50 characters", min = 3, max = 50)
    private String customerFirstName;
 
-
     @NotBlank(message = "Lastname can't be blank")
     @Length(message = "Lastname must be between 3 and 50 characters", min = 3, max = 50)
     private String customerLastName;
-
 
     @Column(unique = true)
     @NotBlank(message = "Phone can't be blank")

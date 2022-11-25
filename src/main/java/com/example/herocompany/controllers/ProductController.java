@@ -24,7 +24,6 @@ public class ProductController {
     @PostMapping("/save")
     public ResponseEntity save(@RequestBody ProductDto productDto) {
         return productServices.save(productDto);
-
     }
 
     @DeleteMapping("/delete/{id}")
@@ -50,7 +49,6 @@ public class ProductController {
     public ResponseEntity findProductsByPrice(){
         return productServices.findProductsByCategory();
     }
-
 
     @GetMapping("/parankadar/{price}")
     public ResponseEntity findProductsByPriceGreaterThanEqual(@PathVariable Integer price){
