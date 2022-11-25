@@ -50,7 +50,7 @@ public class ProductController {
         return productServices.findProductsByCategory();
     }
 
-    @GetMapping("/parankadar/{price}")
+    @GetMapping("/findProductsByPriceGreaterThanEqual/{price}")
     public ResponseEntity findProductsByPriceGreaterThanEqual(@PathVariable Integer price){
         return productServices.findProductsByPriceGreaterThanEqual(price);
     }
