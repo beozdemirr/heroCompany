@@ -46,4 +46,15 @@ public class ProductController {
         return productServices.update(product);
     }
 
+    @GetMapping("/findProductsByPrice")
+    public ResponseEntity findProductsByPrice(){
+        return productServices.findProductsByCategory();
+    }
+
+
+    @GetMapping("/parankadar/{price}")
+    public ResponseEntity findProductsByPriceGreaterThanEqual(@PathVariable Integer price){
+        return productServices.findProductsByPriceGreaterThanEqual(price);
+    }
+
 }

@@ -7,6 +7,7 @@ import com.example.herocompany.repositories.AttributeRepository;
 import com.example.herocompany.repositories.CategoryRepository;
 import com.example.herocompany.repositories.ProductRepository;
 import com.example.herocompany.utils.REnum;
+import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -117,6 +118,20 @@ public class ProductServices {
         }
 
 
+    }
+
+    public ResponseEntity<Map<REnum, Object>> findProductsByCategory() {
+        Map<REnum, Object> hashMap = new LinkedHashMap<>();
+        hashMap.put(REnum.status, true);
+        hashMap.put(REnum.result, productRepository.findProductsByPrice());
+        return new ResponseEntity<>(hashMap, HttpStatus.OK);
+    }
+
+    public ResponseEntity<Map<REnum, Object>> findProductsByPriceGreaterThanEqual(@Param("price") int price) {
+        Map<REnum, Object> hashMap = new LinkedHashMap<>();
+        hashMap.put(REnum.status, true);
+        hashMap.put(REnum.result, productRepository.findProductsByPriceGreaterThanEqual(price));
+        return new ResponseEntity<>(hashMap, HttpStatus.OK);
     }
 
 }

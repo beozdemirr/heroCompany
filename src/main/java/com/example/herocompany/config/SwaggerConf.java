@@ -8,7 +8,8 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 
-
+//TODO: @Query ve  query içerisinde innerjoin kullanımı
+//springin kendi sitesinde jpql sorgusu olarak geçiyor.
 @EnableSwagger2
 @Configuration
 public class SwaggerConf {
