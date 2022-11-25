@@ -1,6 +1,7 @@
 package com.example.herocompany.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -14,6 +15,7 @@ public class Mail {
     private Long id;
     private String mail;
 
+    @JsonIgnore
     @OneToOne(mappedBy = "mail")
     private Customer customer;
 
