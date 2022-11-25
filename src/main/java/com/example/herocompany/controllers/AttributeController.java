@@ -1,6 +1,7 @@
 package com.example.herocompany.controllers;
 
 
+import com.example.herocompany.dto.AttributeDto;
 import com.example.herocompany.entities.Attribute;
 import com.example.herocompany.repositories.AttributeRepository;
 import com.example.herocompany.services.AttributeServices;
@@ -21,8 +22,8 @@ public class AttributeController {
 
 
     @PostMapping("/save")
-    public ResponseEntity save(@RequestBody Attribute attribute) {
-        return attributeServices.save(attribute);
+    public ResponseEntity save(@RequestBody AttributeDto attributeDto) {
+        return attributeServices.save(attributeDto);
     }
 
     @DeleteMapping("/delete/{id}")

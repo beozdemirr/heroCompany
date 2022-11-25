@@ -1,5 +1,6 @@
 package com.example.herocompany.services;
 
+import com.example.herocompany.dto.CategoryDto;
 import com.example.herocompany.entities.Category;
 import com.example.herocompany.repositories.CategoryRepository;
 import com.example.herocompany.utils.REnum;
@@ -24,8 +25,10 @@ public class CategoryServices {
 
 
 
-    public ResponseEntity<Map<REnum, Object>> save(Category category) {
+    public ResponseEntity<Map<REnum, Object>> save(CategoryDto categoryDto) {
         Map<REnum, Object> hashMap = new LinkedHashMap<>();
+        Category category = new Category();
+        category.setCategoryName(categoryDto.getCategoryName());
         categoryRepository.save(category);
         hashMap.put(REnum.status, true);
         hashMap.put(REnum.result, category);

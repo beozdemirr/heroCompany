@@ -1,8 +1,10 @@
 package com.example.herocompany.services;
 
 
+import com.example.herocompany.dto.CustomerDto;
 import com.example.herocompany.entities.Customer;
 import com.example.herocompany.repositories.CustomerRepository;
+import com.example.herocompany.repositories.MailRepository;
 import com.example.herocompany.utils.REnum;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,16 +18,23 @@ import java.util.Optional;
 public class CustomerServices {
 
     final CustomerRepository customerRepository;
+    final MailRepository mailRepository;
 
 
-    public CustomerServices(CustomerRepository customerRepository) {
+    public CustomerServices(CustomerRepository customerRepository, MailRepository mailRepository) {
         this.customerRepository = customerRepository;
 
+        this.mailRepository = mailRepository;
     }
 
 
-    public ResponseEntity<Map<REnum, Object>> save(Customer customer) {
+    public ResponseEntity<Map<REnum, Object>> save(CustomerDto customerDto) {
         Map<REnum, Object> hashMap = new LinkedHashMap<>();
+        Customer customer = new Customer();
+        customer.setCustomerFirstName(customerDto.getCustomerFirstName());
+        customer.setCustomerLastName(customerDto.getCustomerLastName());
+        customer.setCustomerPhone(customerDto.getCustomerPhone());
+        customer.setMail(mailRepository.getById(customerDto.getMailId()));
         customerRepository.save(customer);
         hashMap.put(REnum.status, true);
         hashMap.put(REnum.result, customer);

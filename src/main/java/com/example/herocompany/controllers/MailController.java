@@ -1,6 +1,7 @@
 package com.example.herocompany.controllers;
 
 
+import com.example.herocompany.dto.MailDto;
 import com.example.herocompany.entities.Mail;
 import com.example.herocompany.services.MailServices;
 import org.springframework.http.ResponseEntity;
@@ -21,8 +22,8 @@ public class MailController {
 
 
     @PostMapping("/save")
-    public ResponseEntity save(@RequestBody Mail mail){
-        return mailServices.save(mail);
+    public ResponseEntity save(@RequestBody MailDto mailDto){
+        return mailServices.save(mailDto);
     }
 
 

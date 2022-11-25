@@ -1,11 +1,15 @@
 package com.example.herocompany.controllers;
 
 
+import com.example.herocompany.dto.CustomerDto;
 import com.example.herocompany.entities.Customer;
 import com.example.herocompany.repositories.CustomerRepository;
 import com.example.herocompany.services.CustomerServices;
+import com.example.herocompany.utils.REnum;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 @RestController
 @RequestMapping("/customer")
@@ -20,7 +24,7 @@ public class CustomerController {
     }
 
     @PostMapping("/save")
-    public ResponseEntity save(@RequestBody Customer customer) {return customerServices.save(customer);}
+    public ResponseEntity save(@RequestBody CustomerDto customerDto) {return customerServices.save(customerDto);}
 
 /*    @PostMapping("/save")
     public Customer save(@RequestBody Customer customer){return customerServices.save(customer);}*/
@@ -29,7 +33,7 @@ public class CustomerController {
     public ResponseEntity delete(@PathVariable Long id) {return customerServices.delete(id);}
 
     @GetMapping("/showAll")
-    public ResponseEntity showAll() {return customerServices.showAll();}
+    public ResponseEntity<Map<REnum, Object>> showAll() {return customerServices.showAll();}
 
 
     @GetMapping("/showById/{id}")

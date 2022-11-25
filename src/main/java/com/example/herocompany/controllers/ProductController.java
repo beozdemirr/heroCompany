@@ -2,7 +2,7 @@ package com.example.herocompany.controllers;
 
 
 import com.example.herocompany.entities.Product;
-import com.example.herocompany.entities.ProductDto;
+import com.example.herocompany.dto.ProductDto;
 import com.example.herocompany.repositories.ProductRepository;
 import com.example.herocompany.services.ProductServices;
 import org.springframework.http.ResponseEntity;
@@ -33,8 +33,7 @@ public class ProductController {
     }
 
     @GetMapping("/showAll")
-    public ResponseEntity showAll() {
-        return  productServices.showAll();
+    public ResponseEntity showAll() {return  productServices.showAll();
     }
 
     @GetMapping("/showById/{id}")

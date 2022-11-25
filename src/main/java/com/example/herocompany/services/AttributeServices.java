@@ -1,6 +1,7 @@
 package com.example.herocompany.services;
 
 
+import com.example.herocompany.dto.AttributeDto;
 import com.example.herocompany.entities.Attribute;
 import com.example.herocompany.repositories.AttributeRepository;
 import com.example.herocompany.utils.REnum;
@@ -21,8 +22,10 @@ public class AttributeServices {
         this.attributeRepository = attributeRepository;
     }
 
-    public ResponseEntity<Map<REnum, Object>> save(Attribute attribute) {
+    public ResponseEntity<Map<REnum, Object>> save(AttributeDto attributeDto) {
         Map<REnum, Object> hashMap = new LinkedHashMap<>();
+        Attribute attribute = new Attribute();
+        attribute.setFeature(attributeDto.getFeature());
         attributeRepository.save(attribute);
         hashMap.put(REnum.status, true);
         hashMap.put(REnum.result, attribute);

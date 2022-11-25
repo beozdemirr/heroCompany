@@ -2,7 +2,7 @@ package com.example.herocompany.services;
 
 
 import com.example.herocompany.entities.Product;
-import com.example.herocompany.entities.ProductDto;
+import com.example.herocompany.dto.ProductDto;
 import com.example.herocompany.repositories.AttributeRepository;
 import com.example.herocompany.repositories.CategoryRepository;
 import com.example.herocompany.repositories.ProductRepository;

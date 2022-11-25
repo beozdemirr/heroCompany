@@ -1,5 +1,6 @@
 package com.example.herocompany.controllers;
 
+import com.example.herocompany.dto.CategoryDto;
 import com.example.herocompany.entities.Category;
 import com.example.herocompany.repositories.CategoryRepository;
 import com.example.herocompany.services.CategoryServices;
@@ -20,8 +21,8 @@ public class CategoryContreller {
     }
 
     @PostMapping("/save")
-    public ResponseEntity save(@RequestBody Category category){
-        return categoryServices.save(category);
+    public ResponseEntity save(@RequestBody CategoryDto categoryDto){
+        return categoryServices.save(categoryDto);
     }
 
     @DeleteMapping("/delete/{id}")
