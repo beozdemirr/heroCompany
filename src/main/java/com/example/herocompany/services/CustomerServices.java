@@ -41,20 +41,6 @@ public class CustomerServices {
         return new ResponseEntity<>(hashMap, HttpStatus.OK);
     }
 
-  /*  public Customer save(Customer customer) {
-        Customer customer1 = new Customer();
-        customer1.setCustomerPhone(customer.getCustomerPhone());
-        customer1.setCustomerFirstName(customer.getCustomerFirstName());
-        customer1.setCustomerLastName(customer.getCustomerLastName());
-        customerRepository.save(customer1);
-
-       return customer1;
-
-
-    }*/
-
-
-
     public ResponseEntity<Map<REnum, Object>> delete(Long id) {
         Map<REnum, Object> hashMap = new LinkedHashMap<>();
         try {
