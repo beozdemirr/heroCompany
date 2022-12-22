@@ -21,7 +21,7 @@ public class AttributeController {
     public ResponseEntity save(@RequestBody AttributeDto attributeDto) {
         return attributeServices.save(attributeDto);
     }
-
+//...
     @DeleteMapping("/delete/{id}")
     public ResponseEntity delete(@PathVariable Long id) {
         return attributeServices.delete(id);
