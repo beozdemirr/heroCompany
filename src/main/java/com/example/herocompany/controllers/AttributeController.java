@@ -7,8 +7,6 @@ import com.example.herocompany.repositories.AttributeRepository;
 import com.example.herocompany.services.AttributeServices;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-//test2
 @RestController
 @RequestMapping("/attribute")
 public class AttributeController {
