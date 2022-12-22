@@ -25,7 +25,7 @@ public class AttributeController {
     public ResponseEntity delete(@PathVariable Long id) {
         return attributeServices.delete(id);
     }
-
+//..deneme
     @GetMapping("/showAll")
     public ResponseEntity showAll() {
         return attributeServices.showAll();
